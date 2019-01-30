@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,72 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioRecorder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9N-O8-yOn">
+                                <rect key="frame" x="153" y="250" width="70" height="31"/>
+                                <color key="backgroundColor" red="0.88227534289999998" green="0.88240253930000001" blue="0.88224762680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zJ0-va-0eR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ra-oD-VD8">
+                                <rect key="frame" x="97" y="319" width="70" height="29"/>
+                                <color key="backgroundColor" red="0.88227534289999998" green="0.88240253930000001" blue="0.88224762680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="CZf-4G-xTh"/>
+                                </constraints>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yOB-gI-aL1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ez-M2-Dmg">
+                                <rect key="frame" x="219" y="319" width="70" height="29"/>
+                                <color key="backgroundColor" red="0.88227534289999998" green="0.88240253930000001" blue="0.88224762680000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D6z-kZ-rxN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Ez-M2-Dmg" firstAttribute="top" secondItem="C9N-O8-yOn" secondAttribute="bottom" constant="38" id="22p-vY-35x"/>
+                            <constraint firstItem="8Ez-M2-Dmg" firstAttribute="leading" secondItem="5Ra-oD-VD8" secondAttribute="trailing" constant="52" id="39F-7H-o8r"/>
+                            <constraint firstItem="5Ra-oD-VD8" firstAttribute="top" secondItem="C9N-O8-yOn" secondAttribute="bottom" constant="38" id="4Oj-Gj-pVz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C9N-O8-yOn" secondAttribute="trailing" constant="152" id="4hz-3h-TOU"/>
+                            <constraint firstItem="8Ez-M2-Dmg" firstAttribute="leading" secondItem="5Ra-oD-VD8" secondAttribute="trailing" constant="52" id="JjR-2P-von"/>
+                            <constraint firstItem="C9N-O8-yOn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="Lcb-GA-TCZ"/>
+                            <constraint firstItem="C9N-O8-yOn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="230" id="Qsp-kg-SVQ"/>
+                            <constraint firstItem="5Ra-oD-VD8" firstAttribute="top" secondItem="C9N-O8-yOn" secondAttribute="bottom" constant="38" id="VxL-A5-uDI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Ez-M2-Dmg" secondAttribute="trailing" constant="86" id="ZOO-yH-XbC"/>
+                            <constraint firstItem="5Ra-oD-VD8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="feT-yq-Dg3"/>
+                            <constraint firstItem="5Ra-oD-VD8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="isO-ub-1Su"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Ez-M2-Dmg" secondAttribute="bottom" constant="319" id="t01-6o-aLw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Ra-oD-VD8" secondAttribute="bottom" constant="319" id="tAD-UD-FDS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playButton" destination="5Ra-oD-VD8" id="RaY-Ty-EAu"/>
+                        <outlet property="recordButton" destination="C9N-O8-yOn" id="Wgv-AP-ipl"/>
+                        <outlet property="stopButton" destination="8Ez-M2-Dmg" id="RlS-fq-hZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
